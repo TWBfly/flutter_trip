@@ -40,8 +40,7 @@ class _HomePageState extends State<HomePage> {
             context: context,
             child: NotificationListener(
                 onNotification: (scrollNotification) {
-                  if (scrollNotification is ScrollUpdateNotification &&
-                      scrollNotification.depth == 0) {
+                  if (scrollNotification is ScrollUpdateNotification && scrollNotification.depth == 0) {
                     _onScroll(scrollNotification.metrics.pixels);
                   }
                 },
@@ -76,7 +75,7 @@ class _HomePageState extends State<HomePage> {
             child: Center(
               child: Padding(
                 padding: EdgeInsets.only(top: 20),
-                child: Text("打撒"),
+                child: Text("首页"),
               ),
             ),
           ),

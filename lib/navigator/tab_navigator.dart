@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_trip/pages/Home_page.dart';
+import 'package:flutter_trip/pages/首页.dart';
 import 'package:flutter_trip/pages/My_page.dart';
 import 'package:flutter_trip/pages/Search_page.dart';
 import 'package:flutter_trip/pages/Travel_page.dart';
@@ -21,6 +21,7 @@ class _TabNavigatorState extends State<TabNavigator> {
     return Scaffold(
       body: PageView(
         controller: _controller,
+//        onPageChanged: (),
         children: <Widget>[HomePage(), SearchPage(), TravelPage(), MyPager()],
       ),
       bottomNavigationBar: BottomNavigationBar(
