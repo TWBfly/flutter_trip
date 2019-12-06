@@ -318,15 +318,15 @@ class HomeBeanConfig {
 
 class HomeBeanGridnav {
 	HomeBeanGridnavFlight flight;
-	HomeBeanGridnavHotel hotel;
-	HomeBeanGridnavTravel travel;
+	HomeBeanGridnavFlight hotel;
+	HomeBeanGridnavFlight travel;
 
 	HomeBeanGridnav({this.flight, this.hotel, this.travel});
 
 	HomeBeanGridnav.fromJson(Map<String, dynamic> json) {
 		flight = json['flight'] != null ? new HomeBeanGridnavFlight.fromJson(json['flight']) : null;
-		hotel = json['hotel'] != null ? new HomeBeanGridnavHotel.fromJson(json['hotel']) : null;
-		travel = json['travel'] != null ? new HomeBeanGridnavTravel.fromJson(json['travel']) : null;
+		hotel = json['hotel'] != null ? new HomeBeanGridnavFlight.fromJson(json['hotel']) : null;
+		travel = json['travel'] != null ? new HomeBeanGridnavFlight.fromJson(json['travel']) : null;
 	}
 
 	Map<String, dynamic> toJson() {
@@ -345,23 +345,23 @@ class HomeBeanGridnav {
 }
 
 class HomeBeanGridnavFlight {
-	HomeBeanGridnavFlightItem2 item2;
-	HomeBeanGridnavFlightItem1 item1;
+	HomeBeanGridnavFlightMainitem item2;
+	HomeBeanGridnavFlightMainitem item1;
 	String endColor;
 	HomeBeanGridnavFlightMainitem mainItem;
-	HomeBeanGridnavFlightItem4 item4;
-	HomeBeanGridnavFlightItem3 item3;
+	HomeBeanGridnavFlightMainitem item4;
+	HomeBeanGridnavFlightMainitem item3;
 	String startColor;
 
 	HomeBeanGridnavFlight({this.item2, this.item1, this.endColor, this.mainItem, this.item4, this.item3, this.startColor});
 
 	HomeBeanGridnavFlight.fromJson(Map<String, dynamic> json) {
-		item2 = json['item2'] != null ? new HomeBeanGridnavFlightItem2.fromJson(json['item2']) : null;
-		item1 = json['item1'] != null ? new HomeBeanGridnavFlightItem1.fromJson(json['item1']) : null;
+		item2 = json['item2'] != null ? new HomeBeanGridnavFlightMainitem.fromJson(json['item2']) : null;
+		item1 = json['item1'] != null ? new HomeBeanGridnavFlightMainitem.fromJson(json['item1']) : null;
 		endColor = json['endColor'];
 		mainItem = json['mainItem'] != null ? new HomeBeanGridnavFlightMainitem.fromJson(json['mainItem']) : null;
-		item4 = json['item4'] != null ? new HomeBeanGridnavFlightItem4.fromJson(json['item4']) : null;
-		item3 = json['item3'] != null ? new HomeBeanGridnavFlightItem3.fromJson(json['item3']) : null;
+		item4 = json['item4'] != null ? new HomeBeanGridnavFlightMainitem.fromJson(json['item4']) : null;
+		item3 = json['item3'] != null ? new HomeBeanGridnavFlightMainitem.fromJson(json['item3']) : null;
 		startColor = json['startColor'];
 	}
 
@@ -433,6 +433,7 @@ class HomeBeanGridnavFlightMainitem {
 	String icon;
 	String title;
 	String url;
+	bool hideAppBar;
 
 	HomeBeanGridnavFlightMainitem({this.icon, this.title, this.url});
 
@@ -440,6 +441,7 @@ class HomeBeanGridnavFlightMainitem {
 		icon = json['icon'];
 		title = json['title'];
 		url = json['url'];
+		hideAppBar = json['hideAppBar'];
 	}
 
 	Map<String, dynamic> toJson() {
@@ -447,6 +449,7 @@ class HomeBeanGridnavFlightMainitem {
 		data['icon'] = this.icon;
 		data['title'] = this.title;
 		data['url'] = this.url;
+		data['hideAppBar'] = this.hideAppBar;
 		return data;
 	}
 }
